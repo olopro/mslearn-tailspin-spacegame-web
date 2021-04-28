@@ -10,7 +10,7 @@ variables:
   buildConfiguration: 'Release'
 
 stages:
-- stage: 'build vm'
+- stage: 'Build'
   displayName: 'build vm'
   jobs: 
   - job: 'Build'
