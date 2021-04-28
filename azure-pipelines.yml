@@ -10,8 +10,8 @@ variables:
   buildConfiguration: 'Release'
 
 stages:
-- stage: 'Build'
-  displayName: 'Build the web application'
+- stage: 'build vm'
+  displayName: 'build vm'
   jobs: 
   - job: 'Build'
     displayName: 'Build job'
@@ -58,9 +58,6 @@ stages:
         arguments: '--no-restore --configuration $(buildConfiguration)'
         projects: '**/*.csproj'
 
-- stage: 'Test'
-  displayName: 'Test the web application'
-  jobs: 
   - job: 'Test'
     displayName: 'Test job'
     pool:
@@ -81,9 +78,6 @@ stages:
         publishTestResults: true
         projects: '**/*.Tests.csproj'
 
-- stage: 'Publish'
-  displayName: 'PUblish the web application'
-  jobs: 
   - job: 'Publish'
     displayName: 'Publish job'
     pool:
